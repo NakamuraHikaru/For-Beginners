@@ -1,0 +1,120 @@
+<d!octype html>
+<html>
+    <head>
+        <metacharset='utf-8'>
+    </head>
+    <style>
+        body{
+            padding:20px;
+        }
+        p,h1{ color:#0f0f50; }
+        div{
+            margin:10px;
+            padding:10px;
+        }
+        div.level{
+            margin:20px 30px;
+            border:solid 1px #0f0f50;
+            border-radius: 20px;
+        }
+        span{
+            color:red;
+        }
+        .content{ background-color: orange; }
+        .content-gy{ background-color:greenyellow; }
+        .content-cyan{ background-color:cyan; }
+        /*Level1*/
+        .content .content{ background-color:crimson; color:white; }
+        /*Level2*/
+        .content-gy.content{ background-color:yellow; }
+        /*Level3*/
+        .content-gy.content + .content-gy{ background-color: blueviolet; color:white; }
+        /*Level4*/
+        .content-gy > .content-cyan{ background-color:lightseagreen;}
+        /*Level5*/
+        .content-gy.content ~ .content{ background-color:hotpink;}
+    </style>
+    <body>
+        <div class="level">
+            <p>
+                ここでは、３つのクラスを定義しています。<br>
+                新しいクラス名を作ることなく、HTML/CSSを用いて以下の問題を考えてみましょう。
+            </p>
+            <div class="content">content{ background-color: orange; }</div>
+            <div class="content-gy">content-gy{ background-color:greenyellow; }</div>
+            <div class="content-cyan">content-cyan{ background-color:cyan; }</div>
+            <span>＊'.new-content{background-color:~;}'とか'&lt;div class="new-content"&gt;new content&lt;/div&gt;'とか宣言しちゃだめです。</span>
+        </div>
+        <div class="level">
+            <h1>Level１</h1>
+            <p>同じクラスでも親子の関係で色が変わる</p>
+            <div class="content">
+                content
+                <div class="content">
+                    content
+                </div>
+                <div class="content-cyan">
+                    content-cyan
+                    <div class="content">
+                        content 直接の子（直下）ではなくても色が変わる
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="level">
+            <h1>Level2</h1>
+            <p>クラスを２つ使って３色つくる</p>
+            <div class="content">
+                content
+            </div>
+            <div class="content-gy">
+                content-gy
+            </div>
+            <div class="content content-gy">
+                ????
+            </div>
+        </div>
+        <div class="level">
+            <h1>Level3</h1>
+            <p>同じ階層である要素の直後に隣接していると色が変わる</p>
+            <div class="content-gy content">
+                Level2の要素
+            </div>
+            <div class="content-gy">
+                content-gy
+            </div>
+            <div class="content-gy">
+                content-gy 隣接していないので変わらない
+            </div>
+        </div>
+        <div class="level">        
+            <h1>Level4</h1>
+            <p>あるクラス名の直下では色が変わる</p>
+            <div class="content-gy">
+                content-gy
+                <div class="content-cyan">
+                    content-cyan
+                </div>
+                <div class="content">
+                    content
+                    <div class="content-cyan">
+                        content-cyan 直下でないので色が変わらない
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="level">
+            <h1>Level5</h1>
+            <p>ある要素の後ろにある要素は色が変わる</p>
+            <div class="content-gy content">
+                Level2で作った要素
+            </div>
+            <div class="content">
+                content
+            </div>
+            <div class="content">
+                content 直後でなくても色が変わる
+            </div>
+        </div>
+    </body>
+</html>
