@@ -1,0 +1,94 @@
+body{
+    /*background-color: #f9f5e7;*/
+    padding:20px;
+}
+main{
+    width:800px;
+    margin:10px auto;
+    background-color: white;
+    padding:20px;
+    border-radius: 20px;
+}
+h1,h2,h3{
+    color: #889b00;
+}
+.separate-box{
+    margin:10px;
+}
+.article-box{
+    border: solid 2px #8D6E63;
+    border-radius: 10px;    
+    padding:20px;
+}
+.article-box h3{
+    margin-top:0px;
+}
+.content{
+    height:250px;
+    padding:10px;
+    margin: 10px;
+}
+img.content{
+    width:300px;
+    height:auto;
+    float:left;
+}
+.detail{
+    height:250px;
+    margin: 5px;
+    float:left;
+}
+.contributor{
+    float:right;
+    margin-top: 50px;
+}
+li.star{
+    list-style-type: none;
+}
+ li.star:before {
+	content: '☆ '; /* ←ここにリストマーカーにしたい文字列を設定 */
+	margin-left:-20px;  /*1文字分、左に寄せる */
+}
+
+
+.balloon3-right-btm {
+ 	position: relative;
+	display: inline-block;
+	margin: 1.5em 15px 1.5em 0;
+	padding: 0 5px;
+	line-height: 90px;
+	vertical-align: middle;
+	text-align: center;
+	color: #FFF;
+	font-size: 20px;
+	font-weight: bold;
+	background: #a58eff;
+	border-radius: 20px;
+	box-sizing: border-box;
+}
+
+.mycomment {
+    margin: 10px 0;
+}
+.mycomment p{
+    display: inline-block;
+    position: relative; 
+    margin: 0 10px 0 0;
+    padding: 8px;
+    width: 600px;
+    border-radius: 12px;
+    background: green;
+    font-size: 15px;
+}
+
+.mycomment p:after {
+    content: "";
+    position: absolute;
+    top: 3px; 
+    right: -19px;
+    border: 8px solid transparent;
+    border-left: 18px solid green;
+    -ms-transform: rotate(-35deg);
+    -webkit-transform: rotate(-35deg);
+    transform: rotate(-35deg);
+}
